@@ -38,6 +38,16 @@ namespace TechJobsConsole
             return values;
         }
 
+        public static List<Dictionary<string, string>> findByValue(string value)
+        {
+            LoadData();
+
+            List<Dictionary><string, string>> jobs = new List<Dictionary<string, string>>();
+
+            return x;
+        }
+
+
         public static List<Dictionary<string, string>> FindByColumnAndValue(string column, string value)
         {
             // load data, if not already loaded
