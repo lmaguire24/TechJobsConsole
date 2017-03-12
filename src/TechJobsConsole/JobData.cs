@@ -38,16 +38,6 @@ namespace TechJobsConsole
             return values;
         }
 
-        public static List<Dictionary<string, string>> findByValue(string value)
-        {
-            LoadData();
-
-            List<Dictionary><string, string>> jobs = new List<Dictionary<string, string>>();
-
-            return x;
-        }
-
-
         public static List<Dictionary<string, string>> FindByColumnAndValue(string column, string value)
         {
             // load data, if not already loaded
@@ -68,6 +58,28 @@ namespace TechJobsConsole
             return jobs;
         }
 
+
+        public static List<Dictionary<string, string>> FindByValue(string search)
+        {
+            LoadData();
+
+            List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+
+            foreach (Dictionary<string, string> job in AllJobs)
+            {
+                foreach (string row in job.Values)
+                {
+                    if (row.Contains(search))
+                    {
+                        jobs.Add(job);
+                        break;
+                    }
+
+                }
+
+            }
+            return jobs;
+        }
         /*
          * Load and parse data from job_data.csv
          */
