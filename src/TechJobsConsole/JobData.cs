@@ -69,7 +69,8 @@ namespace TechJobsConsole
             {
                 foreach (string row in job.Values)
                 {
-                    if (row.Contains(search))
+
+                    if (row.IndexOf (search, System.StringComparison.OrdinalIgnoreCase) >=0)
                     {
                         jobs.Add(job);
                         break;
